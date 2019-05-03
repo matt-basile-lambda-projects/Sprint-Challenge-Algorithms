@@ -121,17 +121,16 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        for i in range(0,len(self._list)-1):
-            for i in range(0, len(self._list)):
-                self.swap_item()
-                self.move_right()
-                if self.compare_item() == -1:
-                    self.move_left()
-                    self.swap_item()
-                else:
-                    self.swap_item()
-                    self.move_left()
-                    self.swap_item()
+        set_light_on()
+        while light_is_on:
+            set_light_off() 
+            for i in range(0, len(self._list)-1):
+                if self._list[i] > self._list[i+1]:
+                    # swap
+                    arr[i+1], arr[i] = arr[i], arr[i+1]
+                    set_light_on()
+
+        return arr
     #Pseudo Code
     # List [3, 4, 2 , 1]
     # Result [1, 2, 3, 4]
