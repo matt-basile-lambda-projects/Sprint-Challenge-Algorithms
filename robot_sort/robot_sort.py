@@ -92,12 +92,65 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+    def swap_back(self):
+        self.move_left()
+        self.swap_item()
+    def swap_forward(self):
+        self.swap_item()
+        self.swap_back()
+
     def sort(self):
         """
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        
+
+        for i in range(0,len(self._list)-1):
+            for i in range(0 len(self._list)):
+                self.swap_item()
+                self.move_right()
+                if self.compare_item() ==1:
+                    self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+                else: 
+                    self.move_left()
+                    self.swap_item()
+        def sort(self):
+        """
+        Sort the robot's list.
+        """
+        for i in range(0,len(self._list)-1):
+            for i in range(0, len(self._list)):
+                self.swap_item()
+                self.move_right()
+                if self.compare_item() == -1:
+                    self.move_left()
+                    self.swap_item()
+                else:
+                    self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+    #Pseudo Code
+    # List [3, 4, 2 , 1]
+    # Result [1, 2, 3, 4]
+# Robot TERMS:
+# Swap Items, Step Right
+# Compare Items
+# If Item is Less return
+# step left and Swap
+# 
+# Swap Items, Step Right 
+# IF Item is greater swap 
+# Step Left and Swap
+#
+
+
+#Loop Thorugh Numbers until you reach a bigger number, then go back one and swap.
+
+        
+        
 
 
 if __name__ == "__main__":
