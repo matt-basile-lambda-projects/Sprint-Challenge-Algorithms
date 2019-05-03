@@ -147,7 +147,7 @@ if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49]
+    l = [15, 41, 58, 49, 1]
 
     robot = SortingRobot(l)
 
