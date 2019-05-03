@@ -110,12 +110,15 @@ class SortingRobot:
             for i in range(0, len(self._list)-1):
                 if self._list[i] > self._list[i+1]:
                     # swap
-                    for i in range( 0, self._list[i+1]-1):
+                    for i in range( 0, i):
                         self.move_right() 
                     self.swap_item()
-                    for i in range( 0, self._list[i+1]-1):
-                        self.move_left()
+                    self.move_right()
                     self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+                    for i in range( 0, i+1):
+                        self.move_left()   
                     self.set_light_on()
 
         return self._list
